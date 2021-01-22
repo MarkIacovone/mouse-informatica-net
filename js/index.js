@@ -21,15 +21,16 @@ document.querySelectorAll('.selected-ctn li').forEach(function(indicator, i) {
 });
 
 leftArrow.addEventListener('click', ()=> {
-    sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 0;
-    indicatorParents.children[sectionIndex].classList.add('selected');
+    sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : indicatorParents.children.length - 1;
     setIndex();
+    indicatorParents.children[sectionIndex].classList.add('selected');
 });
 
 rightArrow.addEventListener('click', ()=> {
-    sectionIndex = (sectionIndex < 6) ? sectionIndex + 1 : 6;
-    indicatorParents.children[sectionIndex].classList.add('selected');
+    sectionIndex = (sectionIndex < indicatorParents.children.length - 1) ? sectionIndex + 1 : 0;
     setIndex();
+    indicatorParents.children[sectionIndex].classList.add('selected');
 });
+
 
 /////////////////////////////

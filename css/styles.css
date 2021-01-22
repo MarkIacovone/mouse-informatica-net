@@ -425,6 +425,7 @@ svg,
 .prod-list li {
   flex-basis: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
