@@ -1,11 +1,11 @@
-/* CAROUSEL */
+/* CAROUSEL VARS */
 const slider = document.querySelector('.prod-list');
 const leftArrow = document.querySelector('.lft');
 const rightArrow = document.querySelector('.rgt');
 const indicatorParents = document.querySelector('.selected-ctn');
 let sectionIndex = 0;
 
-/////////////////////////////
+/* SLIDER FUNCT */
 
 function setIndex() {
     document.querySelector('.selected-ctn .selected').classList.remove('selected');
@@ -32,5 +32,4 @@ rightArrow.addEventListener('click', ()=> {
     indicatorParents.children[sectionIndex].classList.add('selected');
 });
 
-
-/////////////////////////////
+/* SERVICES' BOXES DRAW */

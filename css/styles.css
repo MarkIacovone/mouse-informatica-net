@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+@font-face {
+  src: url(/fonts/Android-Insomnia-Regular.ttf);
+  font-family: air;
+}
+
+@font-face {
+  src: url(/fonts/Inter-VariableFont_slnt\,wght.ttf);
+  font-family: vars;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,16 +23,21 @@ body {
 }
 
 h1 {
-  font-family: "Fira Code", monospace;
+  font-family: air, monospace;
   font-weight: 400;
 }
 
 h2 {
-  font-family: "Quantico", sans-serif;
+  font-family: air, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.1em;
   color: white;
 }
 
 h3 {
+  font-family: vars, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: white;
 }
 
@@ -251,7 +266,8 @@ svg,
 }
 
 .sec-1 h2 {
-  text-shadow: -5px 0px 0px #169c218f;
+  /*text-shadow: -5px 0px 0px #169c218f; */
+  text-shadow: -5px 0px 0px #008866;
   letter-spacing: 0.1em;
   font-weight: 300;
   font-size: 3em;
@@ -262,6 +278,7 @@ svg,
   flex-direction: column;
   width: 50%;
   z-index: 1;
+  border: 1px red solid;
 }
 
 .art-1,
@@ -345,7 +362,6 @@ svg,
 .sec-title-ctn {
   position: absolute;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 12%;
   text-align: center;
@@ -354,9 +370,11 @@ svg,
   font-size: 2em;
   cursor: default;
   z-index: 8;
+  border: 1px solid blue;
 }
 
 .sec-title-ctn h2 {
+  width: 50%;
   transition-property: text-shadow;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -367,17 +385,17 @@ svg,
 }
 
 .sec-title-ctn hr {
-  width: 25em;
+  width: 25%;
   height: 0px;
   box-shadow: 0 0 0.3em #00ffea;
 }
 
 .hr-1 {
-  margin-left: 8em;
+  margin-left: 10%;
 }
 
 .hr-2 {
-  margin-right: 8em;
+  margin-right: 10%;
 }
 
 .sec-2-t {
@@ -390,7 +408,6 @@ svg,
   width: 100%;
   height: 100%;
   /* border: 2px red solid; */
-  position: absolute;
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -398,22 +415,17 @@ svg,
 
 .carousel-ctn {
   display: flex;
-  align-items: center;
-  margin-bottom: 15em;
-  width: 90%;
-  height: 100%;
-  margin: 2em auto;
+  width: 100%;
+  height: 90%;
 }
 
 .carousel {
-  position: relative;
-  top: 15%;
   overflow: hidden;
 }
 
 .prod-list {
   width: 700%;
-  height: 100%;
+  margin-top: 20%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -425,27 +437,25 @@ svg,
 .prod-list li {
   flex-basis: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.prod-list .sec-title-ctn {
-  display: flex;
-  bottom: 10%;
-  left: 0%;
+.prod-list li img {
+  max-height: 45vh;
 }
 
-.prod-list .sec-title-ctn .pr-t {
-  flex-basis: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  /* border: turquoise solid 2px; */
+.prod-list li h3 {
+  width: 100%;
+  text-align: center;
 }
 
 .btn-ctn .btn-car {
   position: absolute;
   font-size: 5em;
+  margin-top: 10%;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -476,8 +486,8 @@ svg,
 .selected-ctn {
   padding-left: 35%;
   padding-right: 35%;
+  padding-bottom: 1em;
   width: 100%;
-  /* border: 1px solid darkmagenta; */
   bottom: 0%;
   position: absolute;
   display: flex;
@@ -568,7 +578,8 @@ svg,
 
 .sec-3-content {
   mix-blend-mode: normal;
-  width: 70%;
+  width: 50%;
+  margin-top: 10%;
 }
 
 /* ------ SECTION 4 - FOOTER */
