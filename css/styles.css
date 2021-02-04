@@ -213,12 +213,10 @@ svg,
     width: 100%;
     height: 100%;
     max-height: 10em;
-    /* border: 1px white solid; */
   }
   .logo-container li {
     display: flex;
     justify-content: center;
-    /* border: 2px blue solid; */
     width: 25%;
     padding-left: 0;
     padding-bottom: 0;
@@ -252,17 +250,27 @@ svg,
 .sec-1 {
   position: relative;
   display: flex;
-  top: 0;
+  flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
   margin-bottom: 10em;
 }
-
+/* 
 .sec-1-bg {
   position: absolute;
   z-index: 1;
   width: 100%;
   max-height: 120%;
+} */
+
+.first-sec-bg {
+  position: absolute;
+  background: url("../media/home-sec-1-bg-normal.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 120%;
+  max-height: 120%;
+  z-index: 1;
 }
 
 .sec-1 h2 {
@@ -273,18 +281,24 @@ svg,
   font-size: 3em;
 }
 
-.art-splitter {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+.art-ctn {
+  width: 100%;
+  padding-top: 9em;
   z-index: 1;
-  border: 1px red solid;
+}
+
+.art-splitter {
+  width: 100%;
+  height: 50%;
+}
+
+.art-splitter:nth-child(2) {
+  margin-top: 1em;
 }
 
 .art-1,
 .art-2,
 .art-3 {
-  height: 100%;
   z-index: 2;
   color: white;
   cursor: default;
@@ -296,32 +310,44 @@ svg,
 }
 
 .art-1 {
-  /* top: 10.5em;
-  left: 5em; */
-  padding-top: 20%;
   padding-left: 4%;
 }
 
 .art-1 .part-1 {
   font-size: 2.3rem;
+  margin-bottom: 0.2em;
 }
 
 .art-2 {
-  height: 75%;
   font-size: 0.7rem;
-  /* bottom: 34em;
-  right: 12em; */
-  padding-top: 60%;
   padding-right: 5%;
 }
 
 .art-3 {
   height: 25%;
   font-size: 0.4rem;
-  /* bottom: 45em;
-  right: 25em; */
   padding-top: 3%;
   padding-right: 5%;
+}
+
+@media (max-width: 1000px) {
+  .art-1 .part-1 {
+    font-size: 1.8rem;
+  }
+  .art-1 .part-2 {
+    font-size: 2.5rem;
+  }
+
+  .art-splitter:nth-child(2) {
+    margin-top: 3em;
+  }
+
+  .art-2 {
+    font-size: 0.5rem;
+  }
+  .art-3 {
+    font-size: 0.3rem;
+  }
 }
 
 .art-3 h2 {
@@ -353,24 +379,23 @@ svg,
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: -15%;
+  margin-top: -15em;
   min-width: 100%;
   min-height: 100vh;
-  /* border: solid 2px blue; */
 }
 
 .sec-title-ctn {
   position: absolute;
   display: flex;
   align-items: center;
-  margin-top: 12%;
+  margin-top: 5em;
   text-align: center;
   width: 100%;
   height: 4em;
   font-size: 2em;
   cursor: default;
   z-index: 8;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .sec-title-ctn h2 {
@@ -406,11 +431,9 @@ svg,
 
 .inner-box {
   width: 100%;
-  height: 100%;
-  /* border: 2px red solid; */
   z-index: 5;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .carousel-ctn {
@@ -421,11 +444,13 @@ svg,
 
 .carousel {
   overflow: hidden;
+  width: 100%;
+  margin-top: 5em;
 }
 
 .prod-list {
   width: 700%;
-  margin-top: 20%;
+  margin-top: 13em;
   position: relative;
   display: flex;
   justify-content: center;
@@ -452,12 +477,20 @@ svg,
   text-align: center;
 }
 
-.btn-ctn .btn-car {
+.btn-ctn {
+  display: flex;
+  width: 100%;
   position: absolute;
+  padding-top: 22em;
+}
+
+.btn-ctn .btn-car {
+  /* position: absolute; */
+  /* align-content: center; */
+  width: 50%;
+  display: flex;
+  /* flex-direction: row; */
   font-size: 5em;
-  margin-top: 10%;
-  top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
   opacity: 0.8;
   color: white;
@@ -476,17 +509,18 @@ svg,
 }
 
 .lft {
-  right: 90%;
+  margin-left: 8%;
 }
 
 .rgt {
-  left: 90%;
+  justify-content: flex-end;
+  margin-right: 8%;
 }
 
 .selected-ctn {
   padding-left: 35%;
   padding-right: 35%;
-  padding-bottom: 1em;
+  margin-bottom: -13em;
   width: 100%;
   bottom: 0%;
   position: absolute;
@@ -517,15 +551,15 @@ svg,
 .hide-bg {
   position: absolute;
   width: 95%;
-  top: 40%;
-  left: 2.5%;
   height: 60%;
+  margin-top: 16em;
+  margin-left: 2.5%;
   background: linear-gradient(
     to right,
     #00ffea 0%,
-    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0) 20%,
     rgba(0, 0, 0, 0) 80%,
-    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0) 20%,
     #00ffea 100%
   );
 }
@@ -535,6 +569,7 @@ svg,
   justify-content: center;
   position: absolute;
   width: 100%;
+  margin-top: -4em;
 }
 
 .smoke-bg {
@@ -570,9 +605,8 @@ svg,
   align-items: center;
   width: 100%;
   height: 100%;
-  background-image: url(../media/HOME\ -\ Section\ 3\ BG.png);
+  background-image: url(../media/home-sec-3-bg.png);
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
 }
 
