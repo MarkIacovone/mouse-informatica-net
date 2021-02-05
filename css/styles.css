@@ -515,10 +515,6 @@ svg,
 }
 
 @media (max-width: 800px) {
-  .prod-list li {
-    /* margin-top: 2em; */
-  }
-
   .prod-list li img {
     width: 100%;
     object-fit: contain;
@@ -526,8 +522,21 @@ svg,
   }
 
   .prod-list li h3 {
-    width: 40%;
+    width: 60%;
     font-size: 1em;
+  }
+}
+
+@media (max-width: 500px) {
+  .prod-list {
+    margin-top: 15em;
+  }
+  .prod-list li img {
+    max-height: 30vh;
+  }
+  .prod-list li h3 {
+    width: 80%;
+    font-size: 0.9em;
   }
 }
 
@@ -547,11 +556,29 @@ svg,
   /* flex-direction: row; */
   font-size: 5em;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.5;
   color: white;
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+}
+
+@media (max-width: 800px) {
+  .btn-ctn {
+    padding-top: 22.5em;
+  }
+  .btn-ctn .btn-car {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn-ctn {
+    padding-top: 23em;
+  }
+  .btn-ctn .btn-car {
+    font-size: 3em;
+  }
 }
 
 .btn-car,
@@ -575,7 +602,7 @@ svg,
 .selected-ctn {
   /* padding-left: 35%;
   padding-right: 35%; */
-  margin-bottom: -13em;
+  margin-bottom: -14em;
   width: 40%;
   bottom: 0%;
   position: absolute;
@@ -587,6 +614,14 @@ svg,
 @media (max-width: 800px) {
   .selected-ctn {
     width: 60%;
+    margin-bottom: -12em;
+  }
+}
+
+@media (max-width: 500px) {
+  .selected-ctn {
+    width: 80%;
+    margin-bottom: -9em;
   }
 }
 
@@ -617,11 +652,11 @@ svg,
   margin-left: 2.5%;
   background: linear-gradient(
     to right,
-    #00ffea 0%,
+    #00ffea5e 0%,
     rgba(0, 0, 0, 0) 20%,
     rgba(0, 0, 0, 0) 80%,
     rgba(0, 0, 0, 0) 20%,
-    #00ffea 100%
+    #00ffea5e 100%
   );
 }
 
@@ -629,6 +664,13 @@ svg,
   .hide-bg {
     height: 50%;
     margin-top: 18em;
+  }
+}
+
+@media (max-width: 500px) {
+  .hide-bg {
+    height: 40%;
+    margin-top: 20em;
   }
 }
 
