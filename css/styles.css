@@ -399,11 +399,33 @@ svg,
   /* border: 1px solid blue; */
 }
 
+@media (max-width: 800px) {
+  .sec-title-ctn {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 .sec-title-ctn h2 {
   width: 50%;
+  margin: 0 1em 0 1em;
   transition-property: text-shadow;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+}
+
+@media (max-width: 800px) {
+  .sec-title-ctn h2 {
+    width: 100%;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 500px) {
+  .sec-title-ctn h2 {
+    width: 100%;
+    font-size: 1em;
+  }
 }
 
 .sec-title-ctn h2:hover {
@@ -417,11 +439,24 @@ svg,
 }
 
 .hr-1 {
-  margin-left: 10%;
+  margin-left: 3em;
 }
 
 .hr-2 {
-  margin-right: 10%;
+  margin-right: 3em;
+}
+
+@media (max-width: 800px) {
+  .sec-title-ctn hr {
+    margin: 0;
+    width: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  .sec-title-ctn hr {
+    width: 40%;
+  }
 }
 
 .sec-2-t {
@@ -476,19 +511,23 @@ svg,
 .prod-list li h3 {
   width: 100%;
   text-align: center;
+  line-height: 1.5em;
 }
 
 @media (max-width: 800px) {
   .prod-list li {
-    margin-top: 2em;
+    /* margin-top: 2em; */
   }
 
   .prod-list li img {
+    width: 100%;
+    object-fit: contain;
     max-height: 40vh;
   }
 
   .prod-list li h3 {
-    text-align: center;
+    width: 40%;
+    font-size: 1em;
   }
 }
 
@@ -586,6 +625,13 @@ svg,
   );
 }
 
+@media (max-width: 800px) {
+  .hide-bg {
+    height: 50%;
+    margin-top: 18em;
+  }
+}
+
 .smoke-ctn {
   display: flex;
   justify-content: center;
@@ -634,8 +680,40 @@ svg,
 
 .sec-3-content {
   mix-blend-mode: normal;
-  width: 50%;
-  margin-top: 10%;
+  width: 50em;
+  margin-top: 10em;
+}
+
+.wrap-sec-3 {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .sec-3-content {
+    width: 45em;
+  }
+}
+@media (max-width: 800px) {
+  /* .sec-3-content {
+    width: 35em;
+    margin-top: 7em;
+  } */
+  .no-wrap {
+    display: none;
+  }
+  .wrap-sec-3 {
+    display: flex;
+    width: 20em;
+  }
+  .third {
+    margin-top: 1em;
+  }
+}
+@media (max-width: 600px) {
+  /* .sec-3-content {
+    width: 25em;
+    margin-top: 7em;
+  } */
 }
 
 /* ------ SECTION 4 - FOOTER */
