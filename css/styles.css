@@ -256,6 +256,12 @@ svg,
   margin-bottom: 10em;
   background-color: rgba(0, 0, 0, 0.63);
 }
+
+@media (max-width: 800px) {
+  .sec-1 {
+    margin-bottom: 3em;
+  }
+}
 /* 
 .sec-1-bg {
   position: absolute;
@@ -272,6 +278,20 @@ svg,
   height: 120%;
   max-height: 120%;
   z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .first-sec-bg {
+    background-size: 1000px;
+    background-position-y: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .first-sec-bg {
+    background-size: 500px;
+    background-position-y: 260px;
+  }
 }
 
 .sec-1 h2 {
@@ -340,7 +360,7 @@ svg,
   }
 
   .art-splitter:nth-child(2) {
-    margin-top: 3em;
+    margin-top: 10em;
   }
 
   .art-2 {
@@ -356,8 +376,56 @@ svg,
 }
 
 .art-3 img {
-  padding-top: 2%;
   width: 55em;
+  padding: 0 1em 0 1em;
+}
+
+@media (max-width: 800px) {
+  .art-ctn {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-top: 20%;
+  }
+  .art-splitter {
+    text-align: center;
+  }
+  .art-splitter:nth-child(2) {
+    margin-top: 75%;
+  }
+  .art-2 {
+    padding: 0 1% 0 1%;
+  }
+  .art-1,
+  .art-3 {
+    padding: 0;
+  }
+  .art-3 {
+    margin-top: 5%;
+  }
+  .art-splitter .art-3 img {
+    width: 100%;
+    object-fit: scale-down;
+  }
+  .art-1,
+  .art-2,
+  .art-3 h2,
+  .art-3 img {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .art-1 .part-1 {
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+  }
+  .art-1 .part-2 {
+    font-size: 2.3rem;
+  }
+  .art-2 {
+    font-size: 0.5rem;
+  }
+  .art-3 {
+    font-size: 0.3rem;
+  }
 }
 
 .sec-1 u {
@@ -558,6 +626,7 @@ svg,
   cursor: pointer;
   opacity: 0.5;
   color: white;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -586,8 +655,20 @@ svg,
   z-index: 8;
 }
 
-.btn-car:hover {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .btn-car:hover {
+    opacity: 1;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .btn-car:active {
+    opacity: 1;
+    transition-property: opacity, text-shadow;
+    animation-duration: 2s;
+    transition-timing-function: ease;
+    text-shadow: 0px 0px 10px #fff;
+  }
 }
 
 .lft {
