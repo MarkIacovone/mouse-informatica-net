@@ -62,7 +62,7 @@ a {
   width: 100%;
   height: 15%;
   max-height: 7.1em;
-  background-color: #00000070;
+  background-color: rgba(0, 0, 0, 0.7);
   border-bottom: 0.1em solid #00ffea9c;
   z-index: 10;
   transition-property: border-bottom, background-color;
@@ -71,7 +71,7 @@ a {
 }
 
 .nav-bar:hover {
-  background-color: #0000009f;
+  background-color: rgba(0, 0, 0, 0.9);
   border-bottom: 0.1em solid #00ffea;
 }
 
@@ -93,6 +93,7 @@ a {
   display: flex;
   justify-content: center;
   padding-bottom: 2em;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 svg,
@@ -100,34 +101,60 @@ svg,
   width: 12em;
   fill: #00ffea4f;
   overflow: visible;
-  transition-property: opacity, fill, stroke;
-  transition-duration: 400ms;
+  transition-property: opacity, fill, stroke, filter;
+  transition-duration: 500ms;
   transition-timing-function: ease;
 }
 
 .logo {
   z-index: 1;
   stroke: violet;
+  transition-property: opacity, fill, stroke, filter;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
   stroke-width: 2px;
   stroke-opacity: 0.3;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 0.5em violet);
-  fill: black;
-  stroke: violet;
-  stroke-width: 2px;
-  stroke-opacity: 0.6;
+@media (hover: hover) and (pointer: fine) {
+  .logo:hover {
+    filter: drop-shadow(0 0 0.5em violet);
+    fill: black;
+    stroke: violet;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;
+  }
+  .logo-fill {
+    transition-property: opacity, fill, stroke;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+  }
+  .logo:hover .logo-fill {
+    transition-property: fill;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    fill: #00ffea;
+  }
 }
-
-.logo-fill {
-  transition-property: opacity, fill, stroke;
-  transition-duration: 100ms;
-  transition-timing-function: ease;
-}
-
-.logo:hover .logo-fill {
-  fill: #00ffea;
+@media (any-pointer: coarse) {
+  .logo:active {
+    filter: drop-shadow(0 0 0.5em violet);
+    fill: black;
+    stroke: violet;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;
+  }
+  .logo-fill {
+    transition-property: opacity, fill, stroke;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+  }
+  .logo:active .logo-fill {
+    transition-property: fill;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    fill: #00ffea;
+  }
 }
 
 .page-nav {
@@ -176,6 +203,10 @@ svg,
   padding: 0 1em 0 1em;
 }
 
+.quick-red li a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 .navLink {
   text-align: center;
   word-spacing: 0.5em;
@@ -195,15 +226,28 @@ svg,
   height: 2em;
 }
 
-.logo-h {
-  opacity: 0.7;
-  transition-property: opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
+@media (hover: hover) and (pointer: fine) {
+  .logo-h {
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+  .logo-h:hover {
+    opacity: 1;
+  }
 }
 
-.logo-h:hover {
-  opacity: 1;
+@media (any-pointer: coarse) {
+  .logo-h {
+    opacity: 0.7;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+  }
+  .logo-h:active {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 800px) {
@@ -224,15 +268,15 @@ svg,
     padding-left: 0;
     padding-top: 0.5em;
     padding-bottom: 1em;
-    border-bottom: #00ffea9c 1px solid;
+    /* border-bottom: #00ffea9c 1px solid; */
     transition-property: border-bottom;
     transition-duration: 0.4s;
     transition-timing-function: ease;
   }
-
+  /* 
   .logo-container li:hover {
     border-bottom: #00ffea 1px solid;
-  }
+  } */
 
   /* .logo {
     height: 5%;
@@ -483,18 +527,38 @@ svg,
   }
 }
 
-.sec-1 u {
-  cursor: pointer;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 5px;
-  transition-property: text-decoration-color;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
+@media (hover: hover) and (pointer: fine) {
+  .sec-1 u {
+    cursor: pointer;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 5px;
+    transition-property: text-decoration-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  }
+
+  .sec-1 u:hover {
+    text-decoration-color: rgba(255, 255, 255, 1);
+  }
 }
 
-.sec-1 u:hover {
-  text-decoration-color: rgba(255, 255, 255, 1);
+@media (any-pointer: coarse) {
+  .sec-1 u {
+    cursor: pointer;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 5px;
+    transition-property: text-decoration-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+  .sec-1 u:active {
+    text-decoration-color: rgba(255, 255, 255, 1);
+  }
+  .sec-1 a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 }
 
 /* ------ SECTION 2 - CAROUSEL PRODUCTS */
@@ -730,7 +794,7 @@ svg,
   .btn-car:active {
     opacity: 1;
     transition-property: opacity, text-shadow;
-    animation-duration: 2s;
+    /* animation-duration: 2s; */
     transition-timing-function: ease;
     text-shadow: 0px 0px 10px #fff;
   }
